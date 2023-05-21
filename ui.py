@@ -43,11 +43,10 @@ class UiInterFace():
         global current_file_path
         if current_file_path == "":
             return self.save_file_as()
-        else:
-            current_file_path = file_path
-            with open(current_file_path, "w") as file:
-                contents = self.text.get("1.0", "end")
-                file.write(contents)
+        current_file_path = file_path
+        with open(current_file_path, "w") as file:
+            contents = self.text.get("1.0", "end")
+            file.write(contents)
     
     def save_file_as(self):
         global current_file_path
